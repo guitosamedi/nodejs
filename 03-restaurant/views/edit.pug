@@ -1,0 +1,14 @@
+extends index.pug
+block content
+    section.section.edit-box
+        button.btn
+            a(href="/plats/lister") Retour à la liste des plats 
+        form(method="POST").form
+                label Nom
+                input(type="text" name="name" value=data.name)
+                label Prix
+                input(type="number" name="price" value=data.price)
+                input(type="submit" value="Mettre à jour").btn.neutral
+
+            
+

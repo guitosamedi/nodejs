@@ -1,0 +1,36 @@
+GET https://github.com/typicode/json-server
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+Accept-Language: fr
+Accept: text/html
+
+###
+GET https://jsonplaceholder.typicode.com/users
+
+###
+POST https://jsonplaceholder.typicode.com/todos
+Content-Type: application/json
+
+{
+  "title" : "Rossi Todo",
+  "completed" : false,
+  "userId": 10
+}
+
+###
+POST http://localhost:3000/questions-reponses
+Content-Type: application/json
+
+{
+  "nom" : "ton prénom ?",
+  "prenom": "Rossi"
+}
+
+###
+POST https://www.sid-diginamic.fr/mvc/sessions/dates
+accept: application/json, text/plain, */*
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-GB
+Content-Type: application/json;charset=utf-8
+Cookie: JSESSIONID=E3EF16701DA8670B047F77EC46C6E33D
+
+{"numberOfDays":91,"startDate":"2023-04-24","avecHistorique":false}

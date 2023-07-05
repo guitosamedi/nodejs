@@ -1,0 +1,14 @@
+extends index.pug
+block content
+    section.section.create-box
+        button.btn
+            a(href="/plats/lister") Retour à la liste des plats 
+        form(method="POST").form
+                label Nom
+                input(type="text", name="name")
+                label Prix
+                input(type="number" name="price")
+                input(type="submit" value="Créer").btn.neutral
+
+            
+

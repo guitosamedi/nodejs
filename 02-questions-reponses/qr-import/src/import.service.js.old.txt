@@ -1,0 +1,43 @@
+import { readFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
+import { Buffer } from "node:buffer";
+
+export default async function importServices() {
+  // read Csv file
+  try {
+    const filePath = new URL(
+      "../csv/question-reponse-sans-texte.csv",
+      import.meta.url
+    );
+    const contents = await readFile(filePath, { encoding: "utf8" });
+    console.log(contents);
+    return contents;
+  } catch (err) {
+    console.error(err.message);
+  }
+  // Csv to Json
+  //const json = '{"question-reponses":[{"id":"1","question":"Qui ?"},{"reponse":"Me"},{"id":"2","question":"Quoi ?"},{"reponse":"ça"}]}';
+
+  // Export Json file
+  // Error file do not exist !!
+  try {
+    const controller = new AbortController();
+    const { signal } = controller;
+
+    const data = new Uint8Array(
+      Buffer.from("../csv/question-reponse-sans-texte.txt")
+    );
+    // file must exist ??
+    const promise = writeFile("../qr-data/db.json", data, {
+      signal,
+    });
+
+    // Abort the request before the promise settles.
+    controller.abort();
+
+    await promise;
+  } catch (err) {
+    // When a request is aborted - err is an AbortError
+    console.error(err);
+  }
+}

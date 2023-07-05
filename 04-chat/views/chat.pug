@@ -1,0 +1,20 @@
+extends index.pug
+block content
+    section.section.wrapper   
+        h2 #{subtitle} 
+        section.section.chat-box
+            div
+                ul(id="chat-messages")
+                    //each m in messages
+                    li(id="chat-message")
+                    li messge 2
+                    button#go GO
+        section.section.chat-send-box  
+            form(method="POST" action="/chat/")#form.form     
+                div.chat-action
+                    input(type="text" id="message-input" name="message" placeholder="Tapez votre message ici ..").message-input
+                    input(type="hidden" id="message-pseudo" name="pseudo" value=pseudo).message-btn
+                    input(type="submit" value="Envoyer").go.btn.info
+
+            
+

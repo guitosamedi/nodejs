@@ -1,0 +1,21 @@
+{
+  "name": "00-script-modules-es-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "s01.js",
+  "type": "module",
+  "scripts": {
+    "s02": "node s02.js",
+    "srv": "node server.js"
+  },
+  "dependencies": {
+    "bootstrap": "5.2.3",
+    "live-server": "^1.2.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jquery": "^3.6.4"
+  }
+}

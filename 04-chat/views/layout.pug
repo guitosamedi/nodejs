@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    //meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content="Chat App")
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title #{title}
+    link(rel='stylesheet' href='/css/styles.css')
+    body
+        include includes/header.pug
+        main#main.container
+            block content
+        include includes/footer.pug        
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="client.js"></script> 

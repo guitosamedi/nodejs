@@ -1,0 +1,28 @@
+extends index.pug
+block content
+    section.section.list-box
+        button.btn.success
+            a(href="/plats/creer") Créer un nouveau plat 
+        table
+            thead
+                tr
+                    td ID
+                    td Plats
+                    td Prix
+                    td Action
+            tbody
+                tr
+                    each d in dishes
+                        tr
+                            td=d.id
+                            td=d.name
+                            td=d.price
+                            td
+                                button.btn.info
+                                    a(href="/plats/editer/" + d.id) Editer
+                                button.btn.danger
+                                    a(href="/plats/supprimer/" + d.id) Supprimer
+
+
+              
+

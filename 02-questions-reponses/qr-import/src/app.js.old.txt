@@ -1,0 +1,47 @@
+//import * as readline from 'node:readline/promises';
+import * as readline from "node:readline";
+import { stdin as input, stdout as output } from "node:process";
+import importServices from "./import.service.js";
+
+console.log("** QR-IMPORT **");
+const menu = `
+1. Importer les données CSV
+2. Afficher le nombre de questions
+3. Afficher une question
+99. Sortir
+`;
+console.log(">> Choisir une option", menu);
+/*
+const rl = readline.createInterface({ input, output });
+const answer = await rl.question('What do you think of Node.js? ');
+console.log(`Thank you for your valuable feedback: ${answer}`);
+rl.close();
+*/
+
+const rl = readline.createInterface({ input, output });
+rl.on("line", (input) => {
+  console.log(`Choix: ${input}`);
+
+  if (input === "1") {
+    console.log(`>> Import des données`);
+    // read csv
+    importServices();
+    // Afficher menu
+    console.log(menu);
+  }
+  if (input === "2") {
+    console.log(`>> Affichage du nombre de questions`);
+    // Afficher menu
+    console.log(menu);
+  }
+  if (input === "3") {
+    console.log(`>> Affichage d’une question`);
+    // Afficher menu
+    console.log(menu);
+  }
+  if (input === "99") {
+    console.log(`Au revoir !`);
+    // Fermer la console
+    rl.close();
+  }
+});

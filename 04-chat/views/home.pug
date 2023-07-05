@@ -1,0 +1,13 @@
+extends index.pug
+block content
+    section.section.pseudo-box
+        h2 #{subtitle}
+        li(id="chat-message")
+        form(method="POST").form
+                label Votre Pseudo
+                input(type="text" name="pseudo")
+                input(type="submit" id="test" value="Entrer").btn.info
+
+
+              
+

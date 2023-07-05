@@ -1,0 +1,14 @@
+{
+  "name": "qr-explore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "@g33k0",
+  "license": "MIT"
+}
